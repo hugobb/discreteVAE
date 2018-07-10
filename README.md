@@ -1,6 +1,7 @@
 # Discrete VAE
 
 This code requires version 0.4.0 of pytorch.
+
 This code trains a VAE on BinaryMNIST based on https://github.com/pytorch/examples/tree/master/vae
 
 ## 1. VAE
