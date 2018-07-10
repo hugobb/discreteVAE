@@ -78,7 +78,7 @@ def loss_function(recon_x, x, log_prob, entropy):
     reinforce_loss = torch.sum(log_prob*BCE.detach())
     # If the prior on the latent is uniform then the KL is just the entropy of q(z|x)
     # We add reinforce_loss - reinforce_loss.detach() so we can backpropagate through the encoder with REINFORCE but it doesn't modify the loss.
-    loss = BCE.sum() + reinforce_loss - reinforce_loss.detach() - entropy.sum()
+    loss = BCE.sum() + reinforce_loss - reinforce_loss.detach() + entropy.sum()
     return loss
 
 

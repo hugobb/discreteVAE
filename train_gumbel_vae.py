@@ -78,7 +78,7 @@ optimizer = optim.Adam(model.parameters(), lr=1e-3)
 def loss_function(recon_x, x, p):
     BCE = F.binary_cross_entropy(recon_x, x.view(-1, 784), size_average=False)
 
-    # If the prior is the uniform distribution, the KL is simply the entropy. We can use the entropy of the categorical distribution or of the entrop y of the gumbel-softmax distribution. Here for simplicity we use the entropy of the categorical distribution.
+    # If the prior is the uniform distribution, the KL is simply the entropy (ignoring the constant equals to log d with d the dimensions of the categorical distribution). We can use the entropy of the categorical distribution or of the entrop y of the gumbel-softmax distribution. Here for simplicity we use the entropy of the categorical distribution.
     KLD = - torch.sum(p*torch.log(p + 1e-6))
 
     return BCE + KLD
