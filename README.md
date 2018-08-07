@@ -18,7 +18,7 @@ To train a VAE with reinforce (20 latent variables with each 256 categories):
 python train_reinforce_vae.py
 ```
 
-## 3. Gumbel-Softmax VAE (Not Implemented yet)
+## 3. Gumbel-Softmax VAE
 To train a VAE with reinforce (20 latent variables with each 256 categories):
 
 ```bash
